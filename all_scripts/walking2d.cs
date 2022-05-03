@@ -5,20 +5,27 @@ using UnityEngine;
 public class walking2d : MonoBehaviour
 {
     public int speed;
-    void Start()
-    {
-        
-    }
-
-    
+    public GameObject chel;
+    private int k = 0;
+    private bool once = true;
     void Update()
     {
         if (Input.GetKey(KeyCode.D))
         {
             if (transform.position.x < 0)
                 GoRight();
+            else if (k >= 3 && once)
+            {
+                chel.SetActive(true);
+                transform.position = new Vector3(-130f, transform.position.y, transform.position.z);
+                once = false;
+            }
             else
-                transform.position = new Vector3(-130f, transform.position.y,transform.position.z);
+            {
+                if (!once) return;
+                transform.position = new Vector3(-130f, transform.position.y, transform.position.z);
+                k++;
+            }
         }
 
         if (Input.GetKey(KeyCode.A) && transform.position.x > -130)

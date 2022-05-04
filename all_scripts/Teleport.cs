@@ -30,7 +30,7 @@ public class Teleport : MonoBehaviour
     }
     void Update()
     {
-        ////////////////////////////////////////////////////////////////
+        /*///////////////////////////////////////////////////////////////
         if (Input.GetKey(KeyCode.E))
         {
             _startFly.Invoke();
@@ -40,7 +40,7 @@ public class Teleport : MonoBehaviour
         {
             dragonsc._dragonHum.Invoke();
         }
-        ///////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////*/
         if (isFlying)
         {
             StartCoroutine(WaitForFly());
